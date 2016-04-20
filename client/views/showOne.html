@@ -1,0 +1,43 @@
+<div class="container" ng-controller="pollsController">
+	<a class="pull-right" href="#/polls">Back to Polls</a>
+	<p>you are logged in as: {{user.name}}<p>
+		<br>
+		<br>
+	<h3>{{ thisques.question }}</h3>
+	<h5>Vote on your favorite answer!</h5>
+	<table class="table table-hover">
+		<thead>
+			<th>
+				Option
+			</th>
+			<th>
+				Votes
+			</th>
+			<th>
+				Action
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ thisques.option1.name }}</td>
+				<td>{{ thisques.option1.votes}}</td>
+				<td><a>like!</a></td>
+			</tr>
+			<tr>
+				<td>{{ thisques.option2.name }}</td>
+				<td>{{ thisques.option2.votes}}</td>
+				<td><a>like!</a></td>
+			</tr>
+			<tr>
+				<td>{{ thisques.option3.name }}</td>
+				<td>{{ thisques.option3.votes}}</td>
+				<td><a ng-click="">like!</a></td>
+			</tr>
+			<tr>
+				<td>{{ thisques.option4.name }}</td>
+				<td>{{ thisques.option4.votes}}</td>
+				<td><a>like!</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
