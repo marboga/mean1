@@ -1,5 +1,6 @@
-<div class="container" ng-controller="pollsController">
-	<a class="pull-right navbar" href="#/new">Create a new poll</a>
+<div class="container" >
+	<a class="pull-right navbar" href="#/new">Create a new poll</a><br>
+	<a class="pull-right navbar" ng-click="logout()">logout</a>
 	<h1>Welcome, {{ user.name }}</h1>
 	<br>
 	<br>
@@ -14,7 +15,7 @@
 		<tbody>
 			<tr ng-repeat="poll in polls">
 				<td>
-					{{ poll._user.name }}
+					{{ poll.name }}
 				</td>
 				<td>
 					<a ng-click="getOneQ(poll)" href="#/poll/{{ poll._id }}">
@@ -24,9 +25,9 @@
 				<td>
 					{{ poll.createdAt | date }}
 				</td>
-				<td>
-					<a ng-click="removePoll(poll)" href="#/remove/{{ poll._id }}">
-					delete(if)
+				<td ng-if="user.name === poll.name">
+					<a ng-click="removePoll(poll._id)" href="#/remove/{{ poll._id }}">
+					delete
 				</a>
 			</td>
 			</tr>

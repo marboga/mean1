@@ -9,7 +9,13 @@ module.exports = {
 			if (err){
 				res.json(err)
 			}else{
-				res.json(polls)
+				// Poll.populate(polls._user).exec(function(err, question){
+				// 	if (err){
+				// 		res.json(err)
+				// 	}else{
+						res.json(polls)
+				// 	}
+				// })
 			}
 		})
 	},
@@ -32,7 +38,14 @@ module.exports = {
 				console.log(err)
 			}else{
 				console.log("successfully retrieved from db. question=", question)
-				res.json(question)
+				// Poll.populate(_user).exec(function(err, question){
+				// 	if (err){
+				// 		res.json(err)
+				// 	}else{
+						// console.log('the creator is %s', Poll._user.name)
+						res.json(question)
+				// 	}
+				// })
 			}
 		})
 	},
@@ -44,5 +57,47 @@ module.exports = {
 				res.redirect('/polls')
 			}
 		})
+	},
+	update: function(req, res){
+		console.log('in db controller. ', req.params.option)
+		if (req.params.option == 'option1'){
+			Poll.findOneAndUpdate({_id: req.params.id}, {$inc: {option1votes: +1}}, function(err, data){
+				if (err){
+					res.json(err)
+				}else{
+					res.json(data)
+				}
+			})
+		}
+		else if(req.params.option == 'option2'){
+			Poll.findOneAndUpdate({_id: req.params.id}, {$inc: {option2votes: +1}}, function(err, data){
+				if (err){
+					res.json(err)
+				}else{
+					res.json(data)
+				}
+			})
+		}
+		else if(req.params.option == 'option3'){
+			Poll.findOneAndUpdate({_id: req.params.id}, {$inc: {option3votes: +1}}, function(err, data){
+				if (err){
+					res.json(err)
+				}else{
+					res.json(data)
+				}
+			})
+		}
+		else if(req.params.option == 'option4'){
+			Poll.findOneAndUpdate({_id: req.params.id}, {$inc: {option4votes: +1}}, function(err, data){
+				if (err){
+					res.json(err)
+				}else{
+					res.json(data)
+				}
+			})
+		}
+		else{
+			res.json(err);
+		}
 	},
 }

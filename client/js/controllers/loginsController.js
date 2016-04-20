@@ -19,4 +19,9 @@ survey_app.controller('loginsController', function($scope, loginFactory, $locati
 		})
 	}
 	getUser();
+
+	$scope.logout = function(){
+		$scope.user = {};
+		$location.url('/')
+	}
 })

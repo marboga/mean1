@@ -1,10 +1,11 @@
-<div class="container" ng-controller="pollsController">
+<div class="container">
 	<a class="pull-right" href="#/polls">Back to Polls</a>
 	<p>you are logged in as: {{user.name}}<p>
 		<br>
 		<br>
 	<h3>{{ thisques.question }}</h3>
-	<h5>Vote on your favorite answer!</h5>
+	<h5>by {{ thisques.name }}</h5>
+	<h3>Vote on your favorite answer!</h3>
 	<table class="table table-hover">
 		<thead>
 			<th>
@@ -19,24 +20,24 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td>{{ thisques.option1.name }}</td>
-				<td>{{ thisques.option1.votes}}</td>
-				<td><a>like!</a></td>
+				<td>{{ thisques.option1 }}</td>
+				<td>{{ thisques.option1votes }}</td>
+				<td><a ng-click="addLike({option: 'option1', id: thisques._id})">like!</a></td>
 			</tr>
 			<tr>
-				<td>{{ thisques.option2.name }}</td>
-				<td>{{ thisques.option2.votes}}</td>
-				<td><a>like!</a></td>
+				<td>{{ thisques.option2 }}</td>
+				<td>{{ thisques.option2votes }}</td>
+				<td><a ng-click="addLike({option: 'option2', id: thisques._id})">like!</a></td>
 			</tr>
 			<tr>
-				<td>{{ thisques.option3.name }}</td>
-				<td>{{ thisques.option3.votes}}</td>
-				<td><a ng-click="">like!</a></td>
+				<td>{{ thisques.option3 }}</td>
+				<td>{{ thisques.option3votes }}</td>
+				<td><a ng-click="addLike({option: 'option3', id: thisques._id})">like!</a></td>
 			</tr>
 			<tr>
-				<td>{{ thisques.option4.name }}</td>
-				<td>{{ thisques.option4.votes}}</td>
-				<td><a>like!</a></td>
+				<td>{{ thisques.option4 }}</td>
+				<td>{{ thisques.option4votes }}</td>
+				<td><a ng-click="addLike({option: 'option4', id: thisques._id})">like!</a></td>
 			</tr>
 		</tbody>
 	</table>

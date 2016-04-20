@@ -1,23 +1,32 @@
 <div class="container" ng-controller="pollsController">
+
 	<a class="pull-right" href="#/polls">Cancel</a>
 	<p>you are logged in as: {{user.name}}<p>
 	<h3>Enter the question and options here.</h3>
 
-	<form class="form-group" stype="display: hidden">
-		<!-- <input type="text" name="name" ng-model="new_poll.name" ng-default="{{user.name}}"> -->
+	<form class="form-group" >
 		<label for="question">Question: </label>
-		<input type="text" name="question" ng-model="new_poll.question" ng-minLength="8" required><br>
+		<input type="text" name="question" ng-model="new_poll.question" ng-minLength="8" required>
+		<br>
 
 		<label for="option1"> Option 1: </label>
-		<input type="text" name="option1" ng-model="new_poll.option1.name" ng-minLength="3" required><br>
+		<input type="text" name="option1" ng-model="new_poll.option1" ng-minLength="3" required>
+		<br>
+
 		<label for="option2"> Option 2: </label>
-		<input type="text" name="option2" ng-model="new_poll.option2.name" ng-minLength="3" required><br>
+		<input type="text" name="option2" ng-model="new_poll.option2" ng-minLength="3" required>
+		<br>
+
 		<label for="option3"> Option 3: </label>
-		<input type="text" name="option3" ng-model="new_poll.option3.name" ng-minLength="3" required><br>
+		<input type="text" name="option3" ng-model="new_poll.option3" ng-minLength="3" required>
+		<br>
+
 		<label for="option4"> Option 4: </label>
-		<input type="text" name="option4" ng-model="new_poll.option4.name" ng-minLength="3" required><br>
+		<input type="text" name="option4" ng-model="new_poll.option4" ng-minLength="3" required>
+		<br>
 
 		<button class="btn btn-primary" type="submit" ng-click="makePoll()">Create Poll</button>
 	</form>
+
 
 </div>

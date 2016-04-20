@@ -2,7 +2,7 @@ console.log('in server routes');
 
 var users = require('../controllers/users.js');
 var polls = require('../controllers/polls.js');
-var options = require('../controllers/options.js');
+// var options = require('../controllers/options.js');
 
 module.exports = function(app){
 	app.post('/login', function(req, res){
@@ -24,5 +24,9 @@ module.exports = function(app){
 	app.get('/remove/:id', function(req, res){
 		console.log('trying to REMOVE', req.params.id)
 		polls.remove_one(req, res);
+	})
+	app.get('/poll/:id/:option', function(req, res){
+		console.log('sending to db', req.params)
+		polls.update(req, res);
 	})
 }
