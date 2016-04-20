@@ -47,6 +47,7 @@ survey_app.controller('pollsController', function($scope, pollFactory, loginFact
 
 	$scope.getOneQ = function(poll){
 		pollFactory.get_q(poll, function(poll){
+			$location.url('/poll/'+poll)
 			$scope.thisques = pollFactory.poll;
 			$scope.options = pollFactory.options
 			console.log(pollFactory.poll, pollFactory.options, "^^^^^^^")
@@ -61,9 +62,10 @@ survey_app.controller('pollsController', function($scope, pollFactory, loginFact
 	}
 
 	$scope.logout = function(){
-		userFactory.user = ""
+		loginFactory.user = ""
 		$scope.user = {};
 		$location.url('/')
+		loginFactory.logout()
 	}
 
 })

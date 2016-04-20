@@ -13,7 +13,7 @@
 			<th>Action</th>
 		</thead>
 		<tbody>
-			<tr ng-repeat="poll in polls">
+			<tr ng-repeat="poll in polls | filter: {question: filter_input}">
 				<td>
 					{{ poll.name }}
 				</td>
@@ -33,4 +33,5 @@
 			</tr>
 		</tbody>
 	</table>
+	<input type="text" name="filter_polls" ng-model="filter_input"> search polls
 </div>

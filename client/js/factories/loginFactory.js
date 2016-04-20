@@ -18,5 +18,9 @@ survey_app.factory('loginFactory', function($http){
 		callback(factory.user);
 	}
 
+	factory.logout = function(){
+		factory.user = '';
+	}
+
 	return factory;
 })
