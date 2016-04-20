@@ -28,13 +28,13 @@ survey_app.controller('pollsController', function($scope, pollFactory, loginFact
 		$scope.new_poll._user = $scope.user._id;
 		$scope.new_poll.name = $scope.user.name;
 		pollFactory.create($scope.new_poll, function($scope, pollFactory){
-			if(err){
-				res.json(err)
-				$location.url('/new');
-			}else{
+			// if(err){
+			// 	res.json(err)
+			// 	$location.url('/new');
+			// }else{
 				$scope.new_poll = {}
 				$location.url('/polls');
-			}
+			// }
 		})
 	}
 
