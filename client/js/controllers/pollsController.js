@@ -41,8 +41,8 @@ survey_app.controller('pollsController', function($scope, pollFactory, loginFact
 	$scope.removePoll = function(poll){
 			console.log('trying to remove', poll);
 			pollFactory.delete(poll, function(poll, pollFactory){
-				index();
 			})
+			index();
 	}
 
 	$scope.getOneQ = function(poll){
